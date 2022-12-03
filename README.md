@@ -11,4 +11,12 @@ Download Node Js
 
 from terminal I(Ben) had to do(should be able to run these commands from the vs code terminal):
 
-    npm install mysql
+    npm install mysql (may already be downloaded)
+
+How to run: 
+
+cd into nodeapp folder then run 'npm start'
+
+Then open browser and paste the folllowing to see the first page
+
+**http:**//localhost:3000/nftlist
