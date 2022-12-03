@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NFTs Page</title>
+</head>
+<body>
+<div class="table-data">
+<h2>All NFTs on Platform</h2>
+    <table border="1">     
+        <tr>
+            <th>Token ID</th>
+            <th>Smart Contact Address</th>
+            <th>Name</th>
+            <th>Client ID</th>
+            <th>Price</th>
+        </tr>
+        
+        <%
+        if(nfttable.length!=0){
+    
+            nfttable.forEach(function(data){        
+        %>
+        <tr>
+            <td><%=data.tokenId %></td>
+            <td><%=data.smartContactAddress %></td>
+            <td><%=data.name %></td>
+            <td><%=data.clientID %></td>
+            <td><%=data.price %></td>
+        </tr>
+        <%   }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
