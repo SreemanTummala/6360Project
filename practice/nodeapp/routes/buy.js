@@ -17,6 +17,7 @@ router.post('/insert', function(req, res, next){
     var address = req.body.address;
     var tid = req.body.tokenid;
     var typeP = req.body.typeP;
+    var price = 1200;
 
 
     if (typeP == "1"){ //etherium trade
@@ -27,14 +28,14 @@ router.post('/insert', function(req, res, next){
             //res.render('nftlist', { title: 'NFT List', nfttable: data});
         });
     }
-    // else{ //fiat currency trade
-    //     // var sql='SELECT NFTFiatTrade(' + cid + ', "' + address + '", ' + tid + ', ' + var +');';
-    //     // db.query(sql, function (err, data, fields) {
-    //     //     if (err) throw err;
-    //     //     console.log('query was good')
-    //     //     //res.render('nftlist', { title: 'NFT List', nfttable: data});
-    //     // });
-    // }
+    else{ //fiat currency trade
+        var sql='SELECT NFTFiatTrade(' + cid + ', "' + address + '", ' + tid + ', ' + price +');';
+        db.query(sql, function (err, data, fields) {
+            if (err) throw err;
+            console.log('query was good')
+            //res.render('nftlist', { title: 'NFT List', nfttable: data});
+        });
+    }
 
     //console.log(cid, address, tid, typeP); //testing the variables
 
