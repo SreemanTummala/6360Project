@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NFTs Page type 2</title>
+</head>
+<body>
+    <div class="table-data">
+        <h2>All NFTs on Platforms type 2</h2>
+        <!--====form section start====-->
+        <div class="user-detail">
+            <h2>Create User Data</h2>
+            <form action="/purchaseLogForm" method="POST">
+                <label>Email</label>
+                <input type="text" placeholder="Email" name="email" required>
+                <label>Password</label>
+                <input type="text" placeholder="Password" name="password" required>
+                <button type="submit">Submit</button>
+                <br>
+            </form>
+                <script>
+                    console.log("this is running")
+                </script>
+        </div>
+    </div>
+    <div>
+        <table border="1" >     
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Level</th>
+                <th>Etherum Address</th>
+                <th>clientID</th>
+            </tr>
+            
+            <%
+            if(nfttable.length!=0){
+        
+                nfttable.forEach(function(data){        
+            %>
+            <tr>
+                <td><%=data.name %></td>
+                <td><%=data.phoneNumber %></td>
+                <td><%=data.level %></td>
+                <td><%=data.ethereumAddress %></td>
+                <td><%=data.clientID %></td>
+            </tr>
+            <%   }) %>
+            <% } else{ %>
+                <tr>
+                    <td colspan="7">No Data Found</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    
+
+</body>
+</html>

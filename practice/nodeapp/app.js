@@ -6,6 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/nft');
 var buyRouter = require('./routes/buy');
+var tableOwnedRouter = require('./routes/tableOwned')
+var purchaseLogRouter = require('./routes/purchaseLog')
 var bodyParser = require('body-parser')
 var app = express();
 
@@ -19,7 +21,8 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', buyRouter);
-
+app.use('/', tableOwnedRouter);
+app.use('/', purchaseLogRouter);
 
 
 app.set('views', path.join(__dirname, 'views'));
