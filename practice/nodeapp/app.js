@@ -8,6 +8,7 @@ var usersRouter = require('./routes/nft');
 var buyRouter = require('./routes/buy');
 var tableOwnedRouter = require('./routes/tableOwned')
 var purchaseLogRouter = require('./routes/purchaseLog')
+var actualpurchaseLogRouter = require('./routes/actualPurchaseLog')
 var bodyParser = require('body-parser')
 var app = express();
 
@@ -23,6 +24,7 @@ app.use('/', usersRouter);
 app.use('/', buyRouter);
 app.use('/', tableOwnedRouter);
 app.use('/', purchaseLogRouter);
+app.use('/', actualpurchaseLogRouter);
 
 
 app.set('views', path.join(__dirname, 'views'));
