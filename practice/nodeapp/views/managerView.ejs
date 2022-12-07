@@ -15,16 +15,18 @@
             <li class = "nav_element"><a class = "link" href="/addMoney">Transfer Funds</a></li>
             <li class = "nav_element"><a class = "link" href="/buyForm">Buy NFT</a></li>
             <li class = "nav_element"><a class = "link" href="/">Create Trader</a></li>
-            <li class = "nav_element"><a class = "link" href="/managerView">Manager</a></li>
             <li class = "nav_element"><a class = "link" href="/requestRefund">Refund</a></li>
+            <li class = "nav_element"><a class = "link" href="/managerView">Manager</a></li>
+            
     </div>
 <div class="table-data">
     <!--====form section start====-->
     <div class="user-detail card-body">
-        <h2>Owned NFT's</h2>
-        <form action="/tableOwnedForm" method="POST">
-            <label>Client ID</label>
-            <input type="text" placeholder="Enter Client ID" name="name" class = "form-control-sm" required>
+        <h2>All transactions over a time frame</h2>
+        <form action="/managerViewForm" method="POST">
+            <label>Time Frame</label>
+            <input type="text" placeholder="day/week/month" name="timeframe" class = "form-control" required>
+            <br>
             <button type="submit" class="btn btn-primary btn-sm">Submit</button>
             <script>
                 console.log("this is running")
@@ -35,11 +37,10 @@
     <div class = "card-body">
     <table class="table table-bordered" >     
         <tr>
-            <th>Token ID</th>
-            <th>Smart Contact Address</th>
-            <th>Name</th>
-            <th>Client ID</th>
-            <th>Price</th>
+            <th>Day</th>
+            <th>Week</th>
+            <th>Month</th>
+            <th>Total</th>
         </tr>
         
         <%
@@ -48,11 +49,10 @@
             nfttable.forEach(function(data){        
         %>
         <tr>
-            <td><%=data.tokenId %></td>
-            <td><%=data.smartContactAddress %></td>
-            <td><%=data.name %></td>
-            <td><%=data.clientID %></td>
-            <td><%=data.price %></td>
+            <td><%=data.DAY %></td>
+            <td><%=data.WEEK %></td>
+            <td><%=data.MONTH %></td>
+            <td><%=data.TOTAL %></td>
         </tr>
         <%   }) %>
         <% } else{ %>

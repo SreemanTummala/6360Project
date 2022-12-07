@@ -30,3 +30,9 @@ body {
 li a:hover {
   background-color: #111;
 }
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: #eeeeea;
+}
+.form-horizontal .control-label.text-left{
+  text-align: left;
+}
